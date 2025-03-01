@@ -58,8 +58,8 @@ This separation allows better **monitoring, security, and cost tracking** for ea
 ## Useful Links on OpenAI’s Website
 If you need further details on managing API keys and projects, OpenAI provides official documentation:
 - **API Key Management**: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
-- **Projects Overview**: [https://platform.openai.com/account/projects](https://platform.openai.com/account/projects)
-- **Billing and Usage**: [https://platform.openai.com/account/usage](https://platform.openai.com/account/usage)
+- **Managing Projects in the API Platform**: [https://help.openai.com/en/articles/9186755-managing-projects-in-the-api-platform](https://help.openai.com/en/articles/9186755-managing-projects-in-the-api-platform)
+- **Production Best Practices**: [https://platform.openai.com/docs/guides/production-best-practices](https://platform.openai.com/docs/guides/production-best-practices)
 
 ## Conclusion
 API keys and projects are essential tools for effectively managing access, security, and billing when using OpenAI’s services. **API keys authenticate and control access**, while **projects help organize usage and costs**. By structuring your API interactions with projects and properly securing API keys, you can optimize your experience with OpenAI’s platform.
