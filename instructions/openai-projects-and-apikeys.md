@@ -1,6 +1,21 @@
 <!-- ********************* -->
 # What Are Projects and API Keys? How Are They Used?
 <!-- ********************* -->
+
+This started out as a simple exercise of getting an API key :). So little I know. Half a day later, here is a bit of the full story.
+
+API keys have the following apsects
+
+1. They are tied personal vs organizational accounts
+2. They are tied to projects for monitoring and permissions
+3. For personal users there is a default project
+4. Where is this documented?
+5. What are the best practices?
+6. How does billing work?
+7. What is the difference between personal API vs a Service account API?
+
+Here is the full table of contents.
+
 1. [What Are Projects and API Keys? How Are They Used?](#what-are-projects-and-api-keys-how-are-they-used)
 2. [Understanding API Keys](#understanding-api-keys)
    1. [Why Are API Keys Important?](#why-are-api-keys-important)
