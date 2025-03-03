@@ -13,4 +13,5 @@ env/
 *.swp
 *.log
 .DS_Store
+*sqlite3
 Thumbs.db
