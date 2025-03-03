@@ -11,7 +11,7 @@ VSCode will show changes.
 
 ## Uploading in Git
  
-1. Staging (local machine)
+1. Stage (local machine)
 2. Commit (local machine)
 3. Sync (sending to git server)
 

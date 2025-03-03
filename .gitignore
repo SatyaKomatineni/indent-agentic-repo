@@ -3,10 +3,10 @@
 ~$*
 *.pyc
 *.pyo
+**/.env
 __pycache__/
 venv/
 env/
-.env/
 .venv/
 .idea/
 .vscode/
