@@ -17,3 +17,12 @@ VSCode will show changes.
 
 If you run into problems:
 Undo Commit, Undo Stage
+
+## setting userid and password
+
+The following is necessary to do the first time, when you try to push to the server, also called sometime "sync"
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+```
