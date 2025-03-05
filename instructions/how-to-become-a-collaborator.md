@@ -37,9 +37,16 @@ For now this is by invitation only!
 
 1. Go to the repo in github
 2. Choose "Settings" on top menu (right)
-3. Locate "Manage Access"
-4. Choose button "Add People"
+3. Choose "collaborators" on the left hand side
+4. It will ask for a login again (password)
+5. Locate "Manage Access"
+6. Choose button "Add People"
 
+See below for email acceptance.
+
+<!-- ********************* -->
+## email acceptance needed
+<!-- ********************* -->
 This will send an email to the github user that was added. When accepted, that user will show up as collaborator in the list. Till that time it will show as "pending invite".
 
 
