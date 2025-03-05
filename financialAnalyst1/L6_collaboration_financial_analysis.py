@@ -51,7 +51,7 @@ from crewai_tools import ScrapeWebsiteTool, SerperDevTool, YoutubeChannelSearchT
 
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-youtubechannel_tool = YoutubeChannelSearchTool(youtube_channel_handle='@CNBCtelevision')
+# youtubechannel_tool = YoutubeChannelSearchTool(youtube_channel_handle='@CNBCtelevision')
 
 
 # ## Creating Agents
