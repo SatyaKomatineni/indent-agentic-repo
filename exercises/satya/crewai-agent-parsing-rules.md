@@ -100,3 +100,9 @@ then
    5. For attributes description and expected output (Copy as is that was there, the English without the line breaks)
    6. Just like above tools
 
+# Copying Attribute Values
+- **Preserve Exact Text**: When extracting attribute values (e.g., Role, Backstory, Tools, Task Description, Expected Output), copy them exactly as they appear in the source `.py` file without summarization, paraphrasing, or restructuring.
+- **Maintain Formatting**: Retain special characters, placeholders (e.g., `{variable_name}`), and line breaks as they are.
+- **No Interpretation**: The extraction process should strictly replicate the text without adding or modifying meaning.
+
+
