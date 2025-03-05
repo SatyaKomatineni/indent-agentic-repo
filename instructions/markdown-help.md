@@ -22,6 +22,6 @@ Author: Satya Komatineni
 <!-- ********************* -->
 Here are a few linsk to get you started.
 
-1. [See my notes on markdown]([https://](https://www.satyakomatineni.com/akc/item/5423)). This is a note I wrote for myself over time.
+1. [See my notes on markdown](https://www.satyakomatineni.com/akc/item/5423) This is a note I wrote for myself over time.
 2. If you prefer more industry popular links, use the ones that are at the top of this document for now
 3. I or You may add some of those formats here.
