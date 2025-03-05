@@ -15,6 +15,7 @@
 
 An agent looks like this in a crew python file. This is an example
 
+```
 data_analyst_agent = Agent(
     role="Data Analyst",
     goal="Monitor and analyze market data in real-time "
@@ -30,14 +31,15 @@ data_analyst_agent = Agent(
     tools = [fetch_stock_tool, plot_stock_tool],
 
 )
+```
 
 In this example 
 
-Name = data_analyst_agent
-Role = Data Analyst (identified role attribute)
-goal = Monitor and analyze market data in real-time to identify trends and predict market movements. (identified by goal attribute)
-backstory = Specializing....trading decisions." (all the multi-line text identified by )
-tools = a list of names of the tools used by this agent
+1. Name = data_analyst_agent
+2. Role = Data Analyst (identified role attribute)
+3. goal = Monitor and analyze market data in real-time to identify trends and predict market movements. (identified by goal attribute)
+4. backstory = Specializing....trading decisions." (all the multi-line text identified by )
+5. tools = a list of names of the tools used by this agent
 
 <!-- ********************* -->
 # Rules to identify a Task and its parts to be extracted
@@ -45,6 +47,7 @@ tools = a list of names of the tools used by this agent
 
 Here is how you identify a task in the .py file
 
+```
 data_analysis_task = Task(
     description=(
         "1. First, use the 'Fetch Stock Data' tool to get price and volume data for the selected stock ({stock_selection}) for the past 5 days. "
@@ -61,13 +64,15 @@ data_analysis_task = Task(
     tools = [fetch_stock_tool, plot_stock_tool],
 
 )
+```
 
 Just like before it has the following attributes whose values are in English
 
-Name (the variable name)
-Description
-Expected_output
-Agent this task is related to
+1. Name (the variable name)
+2. Description
+3. Expected_output
+4. Agent this task is related to
+5. it also may have list of tools 
 
 <!-- ********************* -->
 # Here is how I want you to extract and present the data
@@ -84,7 +89,7 @@ then
    1. Agent name (as a heading 1)
    2. Role (heading 2) followed by its english role as body of that heading
    3. backstory (heading 2) followed by its english role as body of that heading
-   4. For the attributes Role and Backstory (Copy as is that was there, the English without the line breaks)
+   4. For the attributes Role and Backstory (**Copy as is ** that was there, the English without the line breaks, I don't want to loose anything that is there in English)
    5. tools (heading 2) indicate that this agent uses this list of tools in a numbered list
 4. A list of tasks
 5. Format for each task
@@ -93,4 +98,5 @@ then
    3. Expected_output (heading 2) and its body
    4. Agent name (heading 2) Name of the agent as body
    5. For attributes description and expected output (Copy as is that was there, the English without the line breaks)
+   6. Just like above tools
 
