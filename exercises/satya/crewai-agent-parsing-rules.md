@@ -26,6 +26,9 @@ data_analyst_agent = Agent(
               "informing trading decisions.",
     verbose=True,
     allow_delegation=True,
+
+    tools = [fetch_stock_tool, plot_stock_tool],
+
 )
 
 In this example 
@@ -34,6 +37,7 @@ Name = data_analyst_agent
 Role = Data Analyst (identified role attribute)
 goal = Monitor and analyze market data in real-time to identify trends and predict market movements. (identified by goal attribute)
 backstory = Specializing....trading decisions." (all the multi-line text identified by )
+tools = a list of names of the tools used by this agent
 
 <!-- ********************* -->
 # Rules to identify a Task and its parts to be extracted
@@ -80,10 +84,13 @@ then
    1. Agent name (as a heading 1)
    2. Role (heading 2) followed by its english role as body of that heading
    3. backstory (heading 2) followed by its english role as body of that heading
+   4. For the attributes Role and Backstory (Copy as is that was there, the English without the line breaks)
+   5. tools (heading 2) indicate that this agent uses this list of tools in a numbered list
 4. A list of tasks
 5. Format for each task
    1. Task: Name (Heading 1) 
    2. Description (heading 2) and its body
    3. Expected_output (heading 2) and its body
    4. Agent name (heading 2) Name of the agent as body
+   5. For attributes description and expected output (Copy as is that was there, the English without the line breaks)
 
