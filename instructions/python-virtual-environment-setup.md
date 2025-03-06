@@ -1,11 +1,11 @@
 
 <!-- ********************* -->
-# Setting up Python Virtual Environments (venv)**
+# Setting up Python Virtual Environments (venv)
 <!-- ********************* -->
 
 A Python **virtual environment (venv)** is an isolated environment that allows you to install and manage dependencies without affecting the global Python installation. This is crucial for maintaining project-specific dependencies and avoiding conflicts between packages. The standard name for a virtual environment is `venv`, and it is widely recommended for consistency. In this guide, we'll cover how to create, manage, and verify a virtual environment.
 
-1. [Setting up Python Virtual Environments (venv)\*\*](#setting-up-python-virtual-environments-venv)
+1. [Setting up Python Virtual Environments (venv)](#setting-up-python-virtual-environments-venv)
 2. [Creating a Virtual Environment](#creating-a-virtual-environment)
    1. [Activating the Virtual Environment](#activating-the-virtual-environment)
    2. [Installing Packages in a Virtual Environment](#installing-packages-in-a-virtual-environment)
@@ -29,8 +29,8 @@ You can create a virtual environment using the `venv` module, which is included 
    ```bash
    python -m venv .venv
    ```
-   - `venv` is the standard name for virtual environments.
-   - This creates a directory `venv/` containing an isolated Python setup.
+   1. `venv` is the standard name for virtual environments.
+   2. This creates a directory `venv/` containing an isolated Python setup.
 
 <!-- ********************* -->
 ## Activating the Virtual Environment
@@ -94,15 +94,20 @@ If you see this, it means the virtual environment is active.
 <!-- ********************* -->
 
 To check the Python path:
-   - **Windows (Command Prompt or PowerShell):**
+
+**Windows (Command Prompt or PowerShell):**
+
      ```powershell
      where python
      ```
-   - **macOS/Linux:**
+
+**macOS/Linux:**
+
      ```bash
      which python
      ```
-   If the output shows a path inside your virtual environment directory (e.g., `venv/bin/python` or `venv\Scripts\python.exe`), then you are running inside `venv`.
+
+If the output shows a path inside your virtual environment directory (e.g., `venv/bin/python` or `venv\Scripts\python.exe`), then you are running inside `venv`.
 
 <!-- ********************* -->
 ## Use `sys` in Python
@@ -120,22 +125,28 @@ You can verify by checking `sys.prefix` inside Python:
 <!-- ********************* -->
 
 Check for the `VIRTUAL_ENV` environment variable:
-   - **macOS/Linux:**
+
+**macOS/Linux:**
+
      ```bash
      echo $VIRTUAL_ENV
      ```
-   - **Windows (Command Prompt):**
+
+**Windows (Command Prompt):**
+
      ```cmd
      echo %VIRTUAL_ENV%
      ```
-   - **Windows (PowerShell):**
+
+**Windows (PowerShell):**
+
      ```powershell
      $env:VIRTUAL_ENV
      ```
-   - If it **prints a path**, that’s your virtual environment.
-   - If it’s **empty**, you are not inside a virtual environment.
 
----
+If it **prints a path**, that’s your virtual environment.
+
+If it’s **empty**, you are not inside a virtual environment.
 
 <!-- ********************* -->
 # Deactivating and Deleting a Virtual Environment
@@ -152,8 +163,6 @@ To delete a virtual environment, remove its directory:
    rd /s /q .venv  # Windows (Command Prompt)
    ```
 
----
-
 <!-- ********************* -->
 # Opening a Python Command Line in VS Code
 <!-- ********************* -->
@@ -163,6 +172,7 @@ How to use vscode to get a python command line.
 <!-- ********************* -->
 ## Using the Integrated Terminal
 <!-- ********************* -->
+
 1. Open **VS Code**.
 2. Open your project folder.
 3. Open the integrated terminal:
@@ -181,21 +191,22 @@ How to use vscode to get a python command line.
 <!-- ********************* -->
 ## Using the Python Interactive Window (Jupyter-like)
 <!-- ********************* -->
+
 1. Install the Python extension in VS Code.
 2. Open the Command Palette (`Ctrl + Shift + P`).
 3. Search for **"Python: Show Python Interactive Window"** and select it.
 4. A new interactive window will open.
 
----
 
 <!-- ********************* -->
 ## Most Common Names for Virtual Environments
 <!-- ********************* -->
 
 The most commonly used names for Python virtual environments are:
-- **`venv`** – The standard and most widely used name.
-- **`env`** – Another popular choice, though it can sometimes conflict with system variables.
-- **`.venv`** – Preferred in some projects because the dot (`.`) hides it in file explorers and Git.
+
+1. **`venv`** – The standard and most widely used name.
+2. **`env`** – Another popular choice, though it can sometimes conflict with system variables.
+3. **`.venv`** – Preferred in some projects because the dot (`.`) hides it in file explorers and Git.
 
 **Note:** If you don't specify a name when creating a virtual environment, Python will return an error because a name is required.
 
@@ -210,9 +221,9 @@ Ensuring that you are working within a Python virtual environment helps avoid de
 ## Key References
 <!-- ********************* -->
 
-- [Python Official venv Documentation](https://docs.python.org/3/library/venv.html)
-- [Virtual Environments and Packages – Python.org](https://packaging.python.org/en/latest/tutorials/installing-packages/)
-- [Managing Python Dependencies – Real Python](https://realpython.com/python-virtual-environments-a-primer/)
+1. [Python Official venv Documentation](https://docs.python.org/3/library/venv.html)
+2. [Virtual Environments and Packages – Python.org](https://packaging.python.org/en/latest/tutorials/installing-packages/)
+3. [Managing Python Dependencies – Real Python](https://realpython.com/python-virtual-environments-a-primer/)
 
 
 
