@@ -6,16 +6,17 @@ from dotenv import load_dotenv
 import yfinance as yf
 import matplotlib.pyplot as plt
 import io
-import os
+import os 
 
 os.environ["OPENAI_MODEL_NAME"] = 'gpt-3.5-turbo'
 
 load_dotenv()
 from crewai.tools import BaseTool
+from pydantic import BaseModel, Field
 class FetchStockDataTool(BaseTool):
     name: str = "Fetch Stock Data"
     description: str = "Fetches stock price and volume data for a given ticker and date range"
-
+    ticker: str = Field(..., description="Stock ticker symbol")
     def _run(self, ticker: str, start_date: str, end_date: str):
         data = yf.download(ticker, start=start_date, end=end_date)
         return data
@@ -23,7 +24,8 @@ class FetchStockDataTool(BaseTool):
 class PlotStockDataTool(BaseTool):
     name: str = "Plot Stock Data"
     description: str = "Plots stock price and volume data using matplotlib"
-
+    ticker: str = Field(..., description="Stock ticker symbol")
+    data: str = Field(None, description="Stock data to plot in three columns, date, Close price, volume")
     def _run(self, data: str, ticker: str):
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
         
@@ -50,8 +52,8 @@ class PlotStockDataTool(BaseTool):
 
 
 # Create instances of the tools
-fetch_stock_tool = FetchStockDataTool()
-plot_stock_tool = PlotStockDataTool()
+fetch_stock_tool = FetchStockDataTool(ticker="{stock_selection}")
+plot_stock_tool = PlotStockDataTool(ticker="{stock_selection}")
 
 data_analyst_agent = Agent(
     role="Data Analyst",
@@ -72,7 +74,7 @@ data_analysis_task = Task(
     description=(
         "1. First, use the 'Fetch Stock Data' tool to get price and volume data for the selected stock ({stock_selection}) for the past 5 days. "
         "2. Save this data in a CSV file named {stock_selection}.csv in the current directory. The CSV file should have three columns: Date, Price, and Volume. "
-        "3. Then, use the 'Plot Stock Data' tool. The output of the 'Fetch Stock Data' tool should be used as the 'data' input for the 'Plot Stock Data' tool. "
+        "3. Then, use the 'Plot Stock Data' tool. The output of the 'Fetch Stock Data' tool should be assigned to variable name 'data' which should be passed as input to the 'Plot Stock Data' tool. "
         "4. Use the stock ticker '{stock_selection}' as the ticker input for the plot tool."
 
     ),
