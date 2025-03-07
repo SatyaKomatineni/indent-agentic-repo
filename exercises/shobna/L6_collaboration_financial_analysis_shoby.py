@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 # In[ ]:
 
-
+import sys
 from crewai import Agent, Task, Crew
 from dotenv import load_dotenv
 
@@ -51,7 +51,7 @@ from crewai_tools import ScrapeWebsiteTool, SerperDevTool, YoutubeChannelSearchT
 
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-youtubechannel_tool = YoutubeChannelSearchTool(youtube_channel_handle='@CNBCtelevision')
+# youtubechannel_tool = YoutubeChannelSearchTool(youtube_channel_handle='@CNBCtelevision')
 
 
 # ## Creating Agents
@@ -141,8 +141,7 @@ data_analysis_task = Task(
         "Use statistical modeling and machine learning to "
         "identify trends and predict market movements."
         "Using most recent predictions of earnings from highly credible stock analysts, check if the current stock price reflects all the positive or negative sentiments about earnings report and guidance for earnings."
-        "Use ONLY these sites: Zacks.com, cnbc.com, reddit.com, seakingalpha.com to understand what is the perception of stock analysts about stock price movement based on upcoming earnings report and guidance." 
-        "Analyze pronouncements of Jim Cramer on this stock."
+        "Use ONLY these sites: Zacks.com, cnbc.com, reddit.com, seakingalpha.com, to understand what is the perception of stock analysts about stock price movement based on upcoming earnings report and guidance." 
         "Use most recent youtube CNBC videos for interviews with CEO of {stock_selection} and of stock analysts in the sector"
     ),
     expected_output=(
@@ -250,7 +249,7 @@ financial_trading_crew = Crew(
 
 # Example data for kicking off the process
 financial_trading_inputs = {
-    'stock_selection': 'NVDA',
+    'stock_selection': 'AVGO',
     'initial_capital': '100000',
     'risk_tolerance': 'Medium',
     'trading_strategy_preference': 'Day Trading',
@@ -261,12 +260,21 @@ financial_trading_inputs = {
 # **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
 
 # In[ ]:
-
+#  module markdown_pdf with 2 variables
+from markdown_pdf import MarkdownPdf,Section
 
 ### this execution will take some time to run
 result = financial_trading_crew.kickoff(inputs=financial_trading_inputs)
-
-
+# Get the directory where the current script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# Define the path to save the PDF in the same directory as the script
+pdf_path = os.path.join(script_dir, "financialReport.pdf")
+### this execution will take some time to run. creating pdf object and converting markdown to pdf
+pdf = MarkdownPdf(toc_level=1)
+# creating sections and adding it to PDF.adding methods add_section to pdf object. 
+pdf.add_section(Section(result))
+# pdf.save("financialReport.pdf")
+pdf.save(pdf_path)
 # - Display the final result as Markdown.
 
 # In[ ]:
