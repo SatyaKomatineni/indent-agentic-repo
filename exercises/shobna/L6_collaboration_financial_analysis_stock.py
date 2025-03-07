@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -136,16 +138,15 @@ risk_management_agent = Agent(
 # Task for Data Analyst Agent: Analyze Market Data
 data_analysis_task = Task(
     description=(
-        "Continuously monitor and analyze market data for "
-        "the selected stock ({stock_selection}). "
-        "Use statistical modeling and machine learning to "
-        "identify trends and predict market movements."
-        "Using most recent predictions of earnings from highly credible stock analysts, check if the current stock price reflects all the positive or negative sentiments about earnings report and guidance for earnings."
-        "Use ONLY these sites: Zacks.com, cnbc.com, reddit.com, seakingalpha.com, to understand what is the perception of stock analysts about stock price movement based on upcoming earnings report and guidance." 
-        "Use most recent youtube CNBC videos for interviews with CEO of {stock_selection} and of stock analysts in the sector"
+        
+        "get me all the articles from past week"
+        "articles will come from from https://seekingalpha.com/symbol/{stock_selection}  "
+        "for the selected stock ({stock_selection}). "
+
+        
     ),
     expected_output=(
-        "Insights and alerts about significant market "
+        "get me all the articles from past week "
         "opportunities or threats for {stock_selection}."
     ),
     agent=data_analyst_agent,
@@ -221,15 +222,15 @@ from langchain_openai import ChatOpenAI
 
 # Define the crew with agents and tasks
 financial_trading_crew = Crew(
-    agents=[data_analyst_agent, 
-            trading_strategy_agent, 
-            execution_agent
+    agents=[data_analyst_agent 
+            # trading_strategy_agent, 
+            # execution_agent
             #, risk_management_agent
             ],
     
-    tasks=[data_analysis_task, 
-           strategy_development_task, 
-           execution_planning_task
+    tasks=[data_analysis_task 
+           # strategy_development_task, 
+           # execution_planning_task
            #, risk_assessment_task
            ],
     

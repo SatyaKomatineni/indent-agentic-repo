@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -22,9 +24,9 @@ warnings.filterwarnings('ignore')
 
 # In[ ]:
 
-import sys
+
 from crewai import Agent, Task, Crew
-from dotenv import load_dotenv
+
 
 # **Note**: 
 # - The video uses `gpt-4-turbo`, but due to certain constraints, and in order to offer this course for free to everyone, the code you'll run here will use `gpt-3.5-turbo`.
@@ -35,11 +37,11 @@ from dotenv import load_dotenv
 
 
 import os
-#from utils import get_openai_api_key, get_serper_api_key
-# openai_api_key = get_openai_api_key()
+from utils import get_openai_api_key, get_serper_api_key
+
+openai_api_key = get_openai_api_key()
 os.environ["OPENAI_MODEL_NAME"] = 'gpt-3.5-turbo'
-#os.environ["SERPER_API_KEY"] = get_serper_api_key()
-load_dotenv()
+os.environ["SERPER_API_KEY"] = get_serper_api_key()
 
 
 # ## crewAI Tools
@@ -47,11 +49,10 @@ load_dotenv()
 # In[ ]:
 
 
-from crewai_tools import ScrapeWebsiteTool, SerperDevTool, YoutubeChannelSearchTool
+from crewai_tools import ScrapeWebsiteTool, SerperDevTool
 
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-# youtubechannel_tool = YoutubeChannelSearchTool(youtube_channel_handle='@CNBCtelevision')
 
 
 # ## Creating Agents
@@ -70,7 +71,7 @@ data_analyst_agent = Agent(
               "informing trading decisions.",
     verbose=True,
     allow_delegation=True,
-    tools = [scrape_tool, search_tool] #, youtubechannel_tool]
+    tools = [scrape_tool, search_tool]
 )
 
 
@@ -140,9 +141,6 @@ data_analysis_task = Task(
         "the selected stock ({stock_selection}). "
         "Use statistical modeling and machine learning to "
         "identify trends and predict market movements."
-        "Using most recent predictions of earnings from highly credible stock analysts, check if the current stock price reflects all the positive or negative sentiments about earnings report and guidance for earnings."
-        "Use ONLY these sites: Zacks.com, cnbc.com, reddit.com, seakingalpha.com, to understand what is the perception of stock analysts about stock price movement based on upcoming earnings report and guidance." 
-        "Use most recent youtube CNBC videos for interviews with CEO of {stock_selection} and of stock analysts in the sector"
     ),
     expected_output=(
         "Insights and alerts about significant market "
@@ -158,14 +156,14 @@ data_analysis_task = Task(
 # Task for Trading Strategy Agent: Develop Trading Strategies
 strategy_development_task = Task(
     description=(
-        "Develop and refine trading strategies based on recent price movement, recent news and "
+        "Develop and refine trading strategies based on "
         "the insights from the Data Analyst and "
         "user-defined risk tolerance ({risk_tolerance}). "
         "Consider trading preferences ({trading_strategy_preference})."
     ),
     expected_output=(
         "A set of potential trading strategies for {stock_selection} "
-        "that align with the user's risk tolerance. Do not give me Options Trading Strategies. Give me only stock trading strategies."
+        "that align with the user's risk tolerance."
     ),
     agent=trading_strategy_agent,
 )
@@ -223,15 +221,13 @@ from langchain_openai import ChatOpenAI
 financial_trading_crew = Crew(
     agents=[data_analyst_agent, 
             trading_strategy_agent, 
-            execution_agent
-            #, risk_management_agent
-            ],
+            execution_agent, 
+            risk_management_agent],
     
     tasks=[data_analysis_task, 
            strategy_development_task, 
-           execution_planning_task
-           #, risk_assessment_task
-           ],
+           execution_planning_task, 
+           risk_assessment_task],
     
     manager_llm=ChatOpenAI(model="gpt-3.5-turbo", 
                            temperature=0.7),
@@ -249,7 +245,7 @@ financial_trading_crew = Crew(
 
 # Example data for kicking off the process
 financial_trading_inputs = {
-    'stock_selection': 'AVGO',
+    'stock_selection': 'AAPL',
     'initial_capital': '100000',
     'risk_tolerance': 'Medium',
     'trading_strategy_preference': 'Day Trading',
@@ -260,21 +256,12 @@ financial_trading_inputs = {
 # **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
 
 # In[ ]:
-#  module markdown_pdf with 2 variables
-from markdown_pdf import MarkdownPdf,Section
+
 
 ### this execution will take some time to run
 result = financial_trading_crew.kickoff(inputs=financial_trading_inputs)
-# Get the directory where the current script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
-# Define the path to save the PDF in the same directory as the script
-pdf_path = os.path.join(script_dir, "financialReport.pdf")
-### this execution will take some time to run. creating pdf object and converting markdown to pdf
-pdf = MarkdownPdf(toc_level=1)
-# creating sections and adding it to PDF.adding methods add_section to pdf object. 
-pdf.add_section(Section(result))
-# pdf.save("financialReport.pdf")
-pdf.save(pdf_path)
+
+
 # - Display the final result as Markdown.
 
 # In[ ]:
@@ -282,3 +269,16 @@ pdf.save(pdf_path)
 
 from IPython.display import Markdown
 Markdown(result)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
