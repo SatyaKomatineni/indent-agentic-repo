@@ -19,8 +19,9 @@ A Python **virtual environment (venv)** is an isolated environment that allows y
    1. [Using the Integrated Terminal](#using-the-integrated-terminal)
    2. [Using the Python Interactive Window (Jupyter-like)](#using-the-python-interactive-window-jupyter-like)
    3. [Most Common Names for Virtual Environments](#most-common-names-for-virtual-environments)
-   4. [**Conclusion**](#conclusion)
-   5. [Key References](#key-references)
+6. [Conclusion](#conclusion)
+7. [Key References](#key-references)
+
 
 <!-- ********************* -->
 # Creating a Virtual Environment
@@ -212,13 +213,13 @@ The most commonly used names for Python virtual environments are:
 
 
 <!-- ********************* -->
-## **Conclusion**
+# Conclusion
 <!-- ********************* -->
 
 Ensuring that you are working within a Python virtual environment helps avoid dependency conflicts and keeps your projects organized. By using these methods, you can efficiently create, manage, and verify your virtual environments.
 
 <!-- ********************* -->
-## Key References
+# Key References
 <!-- ********************* -->
 
 1. [Python Official venv Documentation](https://docs.python.org/3/library/venv.html)
