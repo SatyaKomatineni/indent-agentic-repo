@@ -24,8 +24,10 @@ The standard name for a virtual environment is `venv`, and it is widely recommen
    1. [Using the Integrated Terminal](#using-the-integrated-terminal)
    2. [Using the Python Interactive Window (Jupyter-like)](#using-the-python-interactive-window-jupyter-like)
    3. [Most Common Names for Virtual Environments](#most-common-names-for-virtual-environments)
-7. [Conclusion](#conclusion)
-8. [Key References](#key-references)
+7. [Can I switch to a virtual environment if I had already used the global environment for the project?](#can-i-switch-to-a-virtual-environment-if-i-had-already-used-the-global-environment-for-the-project)
+8. [Add venv to .gitgnore](#add-venv-to-gitgnore)
+9. [Conclusion](#conclusion)
+10. [Key References](#key-references)
 
 
 <!-- ********************* -->
@@ -287,6 +289,30 @@ The most commonly used names for Python virtual environments are:
 
 **Note:** If you don't specify a name when creating a virtual environment, Python will return an error because a name is required.
 
+
+<!-- ********************* -->
+# Can I switch to a virtual environment if I had already used the global environment for the project?
+<!-- ********************* -->
+
+1. Yes, you can.
+2. Go ahead and setup the venv for the project even though previously you had used global setup
+3. When you setup the venv, you have to re-pip-install all the modules again as it won't recognize global anymore
+4. It is recommended to do so
+
+<!-- ********************* -->
+# Add venv to .gitgnore
+<!-- ********************* -->
+
+1. Clearly you don't want the .venv sub directory to be checked into your git server
+2. So you have to place an entry in the .gitignore file in the root directory of your project
+
+Here is that line in .gitignore
+
+```
+.venv/
+```
+
+indicating all files under .venv sub directory needs to be ignored for git. 
 
 <!-- ********************* -->
 # Conclusion
