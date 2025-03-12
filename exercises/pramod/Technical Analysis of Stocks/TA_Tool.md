@@ -6,3 +6,8 @@ Created class StockAnalysisTool. It contains three functions:
 `analyzed_data = self.calculate_indicators(raw_data)`
 
 `self.plot_stock_data_interactive(analyzed_data, symbol)`
+
+## Enhancements Pending
+Need to check if LLM is being called. Do not want it to be called.
+
+I also want to pass arguments into the tool, and not have LLM do it. 
