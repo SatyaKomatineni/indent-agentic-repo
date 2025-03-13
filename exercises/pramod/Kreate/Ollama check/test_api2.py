@@ -1,3 +1,4 @@
+# How do I encapsulate this connecction to Llama so it can be used in crewAI framework
 import requests
 
 # Ollama API details
@@ -10,11 +11,12 @@ headers = {
     "Content-Type": "application/json"
 }
 
+prompt_post = [{'role': 'system', 'content': 'You are Comedian. A hilarious AI comedian who loves making people laugh.\nYour personal goal is: Tell funny jokes\nTo give my best complete final answer to the task respond using the exact following format:\n\nThought: I now can give a great answer\nFinal Answer: Your final answer must be the great and the most complete as possible, it must be outcome described.\n\nI MUST use these formats, my job depends on it!'}, {'role': 'user', 'content': '\nCurrent Task: Generate a funny joke.\n\nThis is the expected criteria for your final answer: Print the joke\nyou MUST return the actual complete content as the final answer, not a summary.\n\nBegin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!\n\nThought:'}]
 # Define request payload (modify as needed)
 data = {
     "model": "llama3",  # Change model name if needed
-    "prompt": "Give me a joke",
-    "stream": False  # Set to True for streaming responses
+    "prompt": prompt_post,
+    "stream": True  # Set to True for streaming responses
 }
 
 # Make the request
