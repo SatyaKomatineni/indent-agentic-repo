@@ -14,12 +14,6 @@
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# - Import libraries, APIs and LLM
-
-# In[ ]:
-
-
 from crewai import Agent, Task, Crew
 from dotenv import load_dotenv
 
@@ -95,9 +89,6 @@ financial_trading_crew = Crew(
 # 
 # - Set the inputs for the execution of the crew.
 
-# In[ ]:
-
-
 # Example data for kicking off the process
 financial_trading_inputs = {
     'stock_selection': 'NVDA',
@@ -106,12 +97,6 @@ financial_trading_inputs = {
     'trading_strategy_preference': 'Day Trading',
     'news_impact_consideration': True
 }
-
-
-# **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
-
-# In[ ]:
-
 
 ### this execution will take some time to run
 result = financial_trading_crew.kickoff(inputs=financial_trading_inputs)
