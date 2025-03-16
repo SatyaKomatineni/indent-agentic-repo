@@ -7,21 +7,12 @@
 
 # The libraries are already installed in the classroom. If you're running this notebook on your own machine, you can install the following:
 # ```Python
-# !pip install crewai==0.28.8 crewai_tools==0.1.6 langchain_community==0.0.29
+# !pip install crewai==0.28.8 crewai_tools==0.1.6 langchain_community==0.0.29 ipython
 # ```
-
 # In[ ]:
-
-
 # Warning control
 import warnings
 warnings.filterwarnings('ignore')
-
-
-# - Import libraries, APIs and LLM
-
-# In[ ]:
-
 
 from crewai import Agent, Task, Crew
 from dotenv import load_dotenv
@@ -98,9 +89,6 @@ financial_trading_crew = Crew(
 # 
 # - Set the inputs for the execution of the crew.
 
-# In[ ]:
-
-
 # Example data for kicking off the process
 financial_trading_inputs = {
     'stock_selection': 'NVDA',
@@ -110,17 +98,11 @@ financial_trading_inputs = {
     'news_impact_consideration': True
 }
 
-
-# **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
-
-# In[ ]:
-
-
 ### this execution will take some time to run
 result = financial_trading_crew.kickoff(inputs=financial_trading_inputs)
 
 
 # - Display the final result as Markdown.
 
-# from IPython.display import Markdown
-# Markdown(result)
+from IPython.display import Markdown
+Markdown(result.raw)
