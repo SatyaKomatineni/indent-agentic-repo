@@ -1,0 +1,17 @@
+Write me 2 powershell command files
+
+The first one should do the following
+
+1. call it activatedir.ps1
+2. take an input variable for a dir
+3. if the directory doesn't exist inform user path is a required argument
+4. Check if the directory exists and a sub directory by name .venv exists
+3. If not given an error message
+2. switch to that dir
+3. run .venv/scripts/activate.ps1
+
+Second one
+
+1. call it ad.ps1
+2. have it call activatedir.ps1 with a directory name c:\satya\code\indent-agentic-repo
+3. Do not use a path for activatedir.ps1 but instead assume it will be on the windows path
