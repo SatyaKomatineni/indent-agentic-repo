@@ -1,0 +1,40 @@
+MacBook Air M4 Review: More Power, Less Money -- WSJ
+March 13, 2025
+08:00 AM ETPublished March 13, 2025 08:00 AM Eastern TimeDow Jones Newswires
+When someone asks what laptop to buy, my default answer is the MacBook Air. And the latest model is even cheaper and better than before. The new M4 MacBook Air has a faster chip, updated webcam and double the RAM -- and it costs $100 less.
+
+The new 13-inch MacBook Air, now available, is back to its $999 starting price tag. Sometimes, that lower price is just bait to get you to pile on upgrade options. Not here. In my testing, the better chip is speedy. The battery lasts all day, and then some. Plus, I now look better on video calls.
+
+My only complaint is the same as always: It's easy to run out of ports.
+
+A better look
+
+The last MacBook Air I reviewed was the M2 model in 2022, when Apple finally refreshed the look of its classic thin laptop. And just like that model, this one has the same quick-release MagSafe magnetic charger, big roomy trackpad and bouncy keys. It has the same 13.6-inch display (and a 15.3-inch screen costs just $200 more).
+
+The M4's webcam has a few more tricks. Center Stage can keep you in frame as you move around or more people jump in. And it can do "Desk View," showing what you're doing with your hands at your desk, while simultaneously keeping your head in the shot. The most notable upgrade, though, is the camera itself: Yes, you will look better on Zoom, with more detail and light.
+
+OK, something else is new: a blue hue. It's more of a light, powder blue, rather than a blue blue like the Microsoft Surface Laptop. At least it's more interesting than the other current options: silver, the pale gold " starlight" and the dark blue "midnight."
+
+Now, back to the main event: this laptop's guts.
+
+When you shop for a laptop, there's a complicated decision matrix at checkout because of all the sneaky upgrades. You almost feel lame picking the base model, but don't. It's a good call.
+
+The new M4 model costs less, but offers double the base memory (16 gigabytes of RAM, up from 8), typically a $200 upgrade, compared with the previous generation. That's plenty for web browsing with a dozen-plus tabs open and running apps such as Zoom and Slack at the same time.
+
+When to pay more
+
+If you are a power user, the things to consider are extra graphics processing, extra RAM and extra storage. Each step up adds $100 or more, and you've got one shot to decide: You can't upgrade those specs post-purchase.
+
+Intensive applications, such as Adobe Premiere for video editing, will need more GPU and RAM. Though if you're going to spend that much on upgrades, you might as well spring for the heavier M4 MacBook Pro ($1,599).
+
+The more expensive Pro model also has a ton of ports on both sides of the laptop. The Air has just two USB-C inputs on the left next to the MagSafe charging port, plus a headphone jack on the right. When I am managing multiple accessories on the Air -- an external display, a mic for podcasting and an external drive -- I yearn for one more port.
+
+Another thing you can't change: wireless connectivity. It still has the older (but mostly fine) Wi-Fi 6E, rather than the faster Wi-Fi 7, and no option for 5G, which has been on my colleague Joanna Stern's Mac wishlist.
+
+If you keep data in the cloud, you don't need a lot of local storage. If you, like me, are a digital hoarder who hasn't cleared your downloads folder in years, move up to 512 gigabytes for $200.
+
+If your storage needs are any greater, it's cheaper to get a portable external drive. I like SanDisk's water- and dust-resistant 2TB option for less than $200.
+
+There is also the bigger 15-inch model. The main benefit there is that you can have two documents open side by side.
+
+Once again, Apple built an almost-everybody computer and is selling it at an almost-everybody $999 price. Tariffs could drive up the cost of Apple gadgets, but the new MacBook Air seems to be immune. For now.
