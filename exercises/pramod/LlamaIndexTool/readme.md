@@ -15,7 +15,7 @@ This program demonstrates the implementation of a **Retrieval-Augmented Generati
 ### Prerequisites
 Ensure you have Python installed along with the following dependencies:
 ```sh
-pip install crewai llama-index dotenv
+pip install crewai==0.105.0 ipython==8.12.3 llama_index==0.12.24 python-dotenv==1.0.1 Requests==2.32.3
 ```
 
 ### Environment Variables
