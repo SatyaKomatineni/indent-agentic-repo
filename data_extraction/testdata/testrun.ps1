@@ -1,0 +1,1 @@
+type .\data_extraction\data.txt | python .\data_extraction\run_data_extraction.py -run

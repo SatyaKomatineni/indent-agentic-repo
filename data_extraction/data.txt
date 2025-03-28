@@ -1,0 +1,2 @@
+.\\data_extraction\\testdata\\Wedbush-Apple March 14 2025.txt
+.\\data_extraction\\testdata\\cat_prompt.txt

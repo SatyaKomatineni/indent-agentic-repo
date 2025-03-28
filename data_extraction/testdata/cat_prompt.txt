@@ -1,0 +1,9 @@
+Apply the following rules to extract information from the input content or article
+
+1. Dimension 1: Get recommendation, it should be one of these: Buy, Sell or Hold. 
+2. Dimension 2: Get the target price of the stock. 
+3. Dimension 3: Summarize any risks mentioned in the article.
+
+Create 3 columns of content based on the three dimensions: Recommendation, Target Price and Risks
+
+Return these columns as output to the task that is using this prompt.
