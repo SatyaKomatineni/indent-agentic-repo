@@ -1,0 +1,23 @@
+1. Name of the ps file: crew-extract.ps1
+2. it should have 3 functions
+2. They are: 
+    help() 
+    validate (homedir, controlfile)
+    execute(homedir, controlfile)
+3. if validate fails it should call help and exit 
+4. It should have two command line options -run, -help, -h 
+5. -h and -help are the same and should call help
+6. if the option doesn't have -run, it should invoke help function and exit
+7. The program should have the following logic when -run is specified (which is the main logic)
+8. argument 1: "controlfile name"
+9. argument 2: Read from the enviroment "data_extraction_home" and call it homedir
+10. Gather both arguments and pass them to validate function
+11. for the control filename, pass the "full path of the filename" as controlfile
+11. In validate function 
+    1. if conrol file is not a valid file return failiure
+    2. if there homedir is not in environment return failiure
+12. In the main logic if validate fails call help and exit
+13. if valid then call the execute function
+14. For now the execute function simply prints the two input values 
+15. Encapsulate this main logic also in a function
+16. In the script call that main function to do the work
