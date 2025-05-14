@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Standalone React Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles-r.css') }}">
+
+</head>
+<body>
+  <div id="root"></div>
+  <!-- React and ReactDOM from CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function Header() {
+      return (
+        <header className="header">
+          <h1>My App Header</h1>
+        </header>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="footer">
+          <p>© 2025 My App</p>
+        </footer>
+      );
+    }
+
+    function Sidebar({ onSelect, selected }) {
+      return (
+        <nav className="sidebar">
+          <ul>
+            <li>
+              <a href="#" onClick={() => onSelect("home")} className={selected === "home" ? "active" : ""}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={() => onSelect("dashboard")} className={selected === "dashboard" ? "active" : ""}>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={() => onSelect("settings")} className={selected === "settings" ? "active" : ""}>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+      );
+    }
+
+    function MainContent({ selected }) {
+      return (
+        <div className="main-content">
+          {selected === "home" && (
+            <>
+              <h2>Welcome Home!</h2>
+              <p>This is the home page content.</p>
+            </>
+          )}
+          {selected === "dashboard" && (
+            <>
+              <h2>Dashboard</h2>
+              <p>Here is your dashboard overview.</p>
+            </>
+          )}
+          {selected === "settings" && (
+            <>
+              <h2>Settings</h2>
+              <p>Change your preferences here.</p>
+            </>
+          )}
+        </div>
+      );
+    }
+
+    function App() {
+      const [selected, setSelected] = useState("home");
+      return (
+        <div>
+          <Header />
+          <div className="container">
+            <Sidebar onSelect={setSelected} selected={selected} />
+            <MainContent selected={selected} />
+          </div>
+          <Footer />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+  <p>hello</p>
+</body>
+</html>
